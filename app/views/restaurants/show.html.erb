@@ -1,0 +1,29 @@
+<h1>This is it!</h1>
+
+
+<ul class="list-inline">
+  <li>
+    <p><%= @restaurant.name  %></p>
+  </li>
+  <li>
+    <p><%= @restaurant.address  %></p>
+  </li>
+  <li>
+    <p><%= @restaurant.category  %></p>
+  </li>
+  <li>
+    <p><%= @restaurant.phone_number  %></p>
+  </li>
+</ul>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li>
+      <h3> <%= review.content %> </h3>
+      <p> <%= review.rating %></p>
+    </li>
+  <% end %>
+</ul>
+
+
+<%= link_to "write some shit about that", new_restaurant_review_path(@restaurant), class: "btn btn-primary" %>
